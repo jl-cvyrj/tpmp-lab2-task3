@@ -21,3 +21,23 @@ struct STUDENT
         int             marks[MARK_COUNT];     /* адзнакі */
         double          average;               /* сярэдні бал */
 };
+
+void    create_students          (struct STUDENT students[],
+                                  int count);
+
+void    calculate_averages       (struct STUDENT students[],
+                                  int count);
+
+void    sort_by_average          (struct STUDENT students[],
+                                  int count);
+
+void    print_excellent_students (struct STUDENT students[],
+                                  int count);
+
+void    remove_min_average       (struct STUDENT students[],
+                                  int *count);
+
+void    print_students           (struct STUDENT students[],
+                                  int count);
+
+#endif
