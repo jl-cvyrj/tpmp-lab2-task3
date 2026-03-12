@@ -68,3 +68,31 @@ calculate_averages(struct STUDENT students[], int count)
                 students[i].average = (double)sum / MARK_COUNT;
         }
 }
+
+/*
+ * Функцыя: sort_by_average
+ *
+ * Апісанне:
+ *      Сартуе масіў студэнтаў па змяншэнні
+ *      сярэдняга бала.
+ */
+void
+sort_by_average(struct STUDENT students[], int count)
+{
+        int             i;
+        int             j;
+        struct STUDENT  temp;
+
+        for (i = 0; i < count - 1; i++)
+        {
+                for (j = 0; j < count - i - 1; j++)
+                {
+                        if (students[j].average < students[j + 1].average)
+                        {
+                                temp = students[j];
+                                students[j] = students[j + 1];
+                                students[j + 1] = temp;
+                        }
+                }
+        }
+}
