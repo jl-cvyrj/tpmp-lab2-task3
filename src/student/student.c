@@ -42,3 +42,29 @@ create_students(struct STUDENT students[], int count)
                 }
         }
 }
+
+/*
+ * Функцыя: calculate_averages
+ *
+ * Апісанне:
+ *      Вылічвае сярэдні бал кожнага студэнта.
+ */
+void
+calculate_averages(struct STUDENT students[], int count)
+{
+        int     i;
+        int     j;
+        int     sum;
+
+        for (i = 0; i < count; i++)
+        {
+                sum = 0;
+
+                for (j = 0; j < MARK_COUNT; j++)
+                {
+                        sum += students[i].marks[j];
+                }
+
+                students[i].average = (double)sum / MARK_COUNT;
+        }
+}
