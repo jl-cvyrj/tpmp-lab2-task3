@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include "../../include/student.h"
 
+/* Прыватныя функцыі */
+static int      has_only_good_marks     (struct STUDENT *student);
+
 /*
  * Функцыя: create_students
  *
@@ -95,4 +98,27 @@ sort_by_average(struct STUDENT students[], int count)
                         }
                 }
         }
+}
+
+/*
+ * Функцыя: has_only_good_marks
+ *
+ * Апісанне:
+ *      Правярае, ці мае студэнт толькі
+ *      адзнакі 4 і 5.
+ */
+static int
+has_only_good_marks(struct STUDENT *student)
+{
+        int     i;
+
+        for (i = 0; i < MARK_COUNT; i++)
+        {
+                if (student->marks[i] < 4)
+                {
+                        return 0;
+                }
+        }
+
+        return 1;
 }
