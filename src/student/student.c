@@ -166,6 +166,36 @@ remove_min_average(struct STUDENT students[], int *count)
 }
 
 /*
+ * Функцыя: print_students
+ *
+ * Апісанне:
+ *      Выводзіць інфармацыю пра ўсіх студэнтаў.
+ */
+void
+print_students(struct STUDENT students[], int count)
+{
+        int     i;
+        int     j;
+
+        printf("\nСпіс студэнтаў:\n");
+
+        for (i = 0; i < count; i++)
+        {
+                printf("\n%s\n", students[i].name);
+                printf("Група: %d\n", students[i].group);
+
+                printf("Адзнакі: ");
+
+                for (j = 0; j < MARK_COUNT; j++)
+                {
+                        printf("%d ", students[i].marks[j]);
+                }
+
+                printf("\nСярэдні бал: %.2f\n", students[i].average);
+        }
+}
+
+/*
  * Функцыя: has_only_good_marks
  *
  * Апісанне:
