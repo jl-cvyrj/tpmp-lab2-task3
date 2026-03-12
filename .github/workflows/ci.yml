@@ -5,8 +5,8 @@ jobs:
                 runs-on: ubuntu-latest
                 steps:  
                 - name: Checkout code
-                        uses: actions/checkout@v4
+                  uses: actions/checkout@v4
                 - name: Build with Make
-                        run: make
+                  run: make
                 - name: Run the program (optional)
-                        run: ./bin/main
+                  run: ./bin/main
