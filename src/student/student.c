@@ -128,6 +128,44 @@ print_excellent_students(struct STUDENT students[], int count)
 }
 
 /*
+ * Функцыя: remove_min_average
+ *
+ * Апісанне:
+ *      Выдаляе ўсіх студэнтаў з мінімальным
+ *      сярэднім балам.
+ */
+void
+remove_min_average(struct STUDENT students[], int *count)
+{
+        int     i;
+        int     j = 0;
+        double  min;
+
+        /* пошук мінімальнага сярэдняга бала */
+        min = students[0].average;
+
+        for (i = 1; i < *count; i++)
+        {
+                if (students[i].average < min)
+                {
+                        min = students[i].average;
+                }
+        }
+
+        /* пакідаем толькі студэнтаў з большым балам */
+        for (i = 0; i < *count; i++)
+        {
+                if (students[i].average > min)
+                {
+                        students[j] = students[i];
+                        j++;
+                }
+        }
+
+        *count = j;
+}
+
+/*
  * Функцыя: has_only_good_marks
  *
  * Апісанне:
