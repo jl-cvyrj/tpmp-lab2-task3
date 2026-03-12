@@ -100,6 +100,33 @@ sort_by_average(struct STUDENT students[], int count)
         }
 }
 
+
+/*
+ * Функцыя: print_excellent_students
+ *
+ * Апісанне:
+ *      Выводзіць студэнтаў, якія маюць
+ *      толькі адзнакі 4 і 5.
+ */
+void
+print_excellent_students(struct STUDENT students[], int count)
+{
+        int     i;
+
+        printf("\nСтудэнты з адзнакамі толькі 4 і 5:\n");
+
+        for (i = 0; i < count; i++)
+        {
+                if (has_only_good_marks(&students[i]))
+                {
+                        printf("%s  група %d  сярэдні бал %.2f\n",
+                               students[i].name,
+                               students[i].group,
+                               students[i].average);
+                }
+        }
+}
+
 /*
  * Функцыя: has_only_good_marks
  *
