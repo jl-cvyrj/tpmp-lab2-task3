@@ -32,7 +32,7 @@ create_students(struct STUDENT students[], int count)
                 printf("\nСтудэнт %d\n", i + 1);
 
                 printf("Прозвішча і ініцыялы: ");
-                scanf("%s", students[i].name);
+                scanf(" %99[^\n]", students[i].name);
 
                 printf("Нумар групы: ");
                 scanf("%d", &students[i].group);
