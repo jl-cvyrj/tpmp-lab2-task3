@@ -15,3 +15,5 @@ academic performance.
 # Additional Notes
 
 Programm is written in C programming language.
+
+Also this repository is used as a submodule.
